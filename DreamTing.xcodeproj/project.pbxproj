@@ -13,6 +13,14 @@
 		FC33A6001D8C70D700E4CD74 /* DreamTing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC33A5FE1D8C70D700E4CD74 /* DreamTing.xcdatamodeld */; };
 		FC33A6021D8C70D700E4CD74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC33A6011D8C70D700E4CD74 /* Assets.xcassets */; };
 		FC33A6051D8C70D700E4CD74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC33A6031D8C70D700E4CD74 /* LaunchScreen.storyboard */; };
+		FC33A6141D8C7D0B00E4CD74 /* Store+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A60C1D8C7D0B00E4CD74 /* Store+CoreDataClass.swift */; };
+		FC33A6151D8C7D0B00E4CD74 /* Store+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A60D1D8C7D0B00E4CD74 /* Store+CoreDataProperties.swift */; };
+		FC33A6161D8C7D0B00E4CD74 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A60E1D8C7D0B00E4CD74 /* Category+CoreDataClass.swift */; };
+		FC33A6171D8C7D0B00E4CD74 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A60F1D8C7D0B00E4CD74 /* Category+CoreDataProperties.swift */; };
+		FC33A6181D8C7D0B00E4CD74 /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6101D8C7D0B00E4CD74 /* Image+CoreDataClass.swift */; };
+		FC33A6191D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6111D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift */; };
+		FC33A61A1D8C7D0B00E4CD74 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6121D8C7D0B00E4CD74 /* Item+CoreDataClass.swift */; };
+		FC33A61B1D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6131D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		FC33A6011D8C70D700E4CD74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC33A6041D8C70D700E4CD74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC33A6061D8C70D700E4CD74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC33A60C1D8C7D0B00E4CD74 /* Store+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Store+CoreDataClass.swift"; path = "../Store+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FC33A60D1D8C7D0B00E4CD74 /* Store+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Store+CoreDataProperties.swift"; path = "../Store+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FC33A60E1D8C7D0B00E4CD74 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "../Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FC33A60F1D8C7D0B00E4CD74 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "../Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FC33A6101D8C7D0B00E4CD74 /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataClass.swift"; path = "../Image+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FC33A6111D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataProperties.swift"; path = "../Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FC33A6121D8C7D0B00E4CD74 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "../Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FC33A6131D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "../Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,7 @@
 		FC33A5F61D8C70D600E4CD74 /* DreamTing */ = {
 			isa = PBXGroup;
 			children = (
+				FC33A61C1D8C7D4000E4CD74 /* Models */,
 				FC33A5F71D8C70D600E4CD74 /* AppDelegate.swift */,
 				FC33A5F91D8C70D600E4CD74 /* ViewController.swift */,
 				FC33A5FB1D8C70D700E4CD74 /* Main.storyboard */,
@@ -65,6 +82,29 @@
 				FC33A5FE1D8C70D700E4CD74 /* DreamTing.xcdatamodeld */,
 			);
 			path = DreamTing;
+			sourceTree = "<group>";
+		};
+		FC33A61C1D8C7D4000E4CD74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC33A60C1D8C7D0B00E4CD74 /* Store+CoreDataClass.swift */,
+				FC33A60E1D8C7D0B00E4CD74 /* Category+CoreDataClass.swift */,
+				FC33A6101D8C7D0B00E4CD74 /* Image+CoreDataClass.swift */,
+				FC33A6121D8C7D0B00E4CD74 /* Item+CoreDataClass.swift */,
+				FC33A61D1D8C7D5300E4CD74 /* Extensions */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FC33A61D1D8C7D5300E4CD74 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC33A60D1D8C7D0B00E4CD74 /* Store+CoreDataProperties.swift */,
+				FC33A60F1D8C7D0B00E4CD74 /* Category+CoreDataProperties.swift */,
+				FC33A6111D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift */,
+				FC33A6131D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +180,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC33A61A1D8C7D0B00E4CD74 /* Item+CoreDataClass.swift in Sources */,
+				FC33A6191D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift in Sources */,
+				FC33A6171D8C7D0B00E4CD74 /* Category+CoreDataProperties.swift in Sources */,
+				FC33A6151D8C7D0B00E4CD74 /* Store+CoreDataProperties.swift in Sources */,
+				FC33A6161D8C7D0B00E4CD74 /* Category+CoreDataClass.swift in Sources */,
+				FC33A6181D8C7D0B00E4CD74 /* Image+CoreDataClass.swift in Sources */,
 				FC33A6001D8C70D700E4CD74 /* DreamTing.xcdatamodeld in Sources */,
+				FC33A6141D8C7D0B00E4CD74 /* Store+CoreDataClass.swift in Sources */,
 				FC33A5FA1D8C70D600E4CD74 /* ViewController.swift in Sources */,
+				FC33A61B1D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift in Sources */,
 				FC33A5F81D8C70D600E4CD74 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +354,7 @@
 				FC33A60B1D8C70D700E4CD74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
