@@ -32,7 +32,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I8U-CM-bXV">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="1Dz-hC-qza">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaterialCell" rowHeight="150" id="1Dz-hC-qza">
                                         <rect key="frame" x="0.0" y="28" width="343" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Dz-hC-qza" id="IuI-FE-0lx">
@@ -41,7 +41,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgY-aC-ysZ">
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyblade1" translatesAutoresizingMaskIntoConstraints="NO" id="pDM-AB-PvV">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyblade1" translatesAutoresizingMaskIntoConstraints="NO" id="pDM-AB-PvV">
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="4Qy-7X-WqY"/>
                                                                 <constraint firstAttribute="height" constant="100" id="VnH-fm-VqW"/>
@@ -84,6 +84,9 @@
                                                         <constraint firstItem="PZC-Th-7a2" firstAttribute="top" secondItem="GgY-aC-ysZ" secondAttribute="top" constant="16" id="vaF-6O-IhB"/>
                                                         <constraint firstItem="PZC-Th-7a2" firstAttribute="leading" secondItem="pDM-AB-PvV" secondAttribute="trailing" constant="8" id="yHZ-nO-vPL"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -109,14 +112,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Items" id="9WU-Km-jZJ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="4oQ-d6-JPM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4oQ-d6-JPM">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079.2" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1330" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pXV-AW-Fds">

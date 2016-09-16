@@ -21,6 +21,7 @@
 		FC33A6191D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6111D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift */; };
 		FC33A61A1D8C7D0B00E4CD74 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6121D8C7D0B00E4CD74 /* Item+CoreDataClass.swift */; };
 		FC33A61B1D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6131D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift */; };
+		FC33A6211D8CACBC00E4CD74 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6201D8CACBA00E4CD74 /* MaterialView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FC33A6111D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataProperties.swift"; path = "../Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FC33A6121D8C7D0B00E4CD74 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "../Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FC33A6131D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "../Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FC33A6201D8CACBA00E4CD74 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		FC33A61F1D8C9DDB00E4CD74 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FC33A6201D8CACBA00E4CD74 /* MaterialView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				FC33A61A1D8C7D0B00E4CD74 /* Item+CoreDataClass.swift in Sources */,
 				FC33A6191D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift in Sources */,
 				FC33A6171D8C7D0B00E4CD74 /* Category+CoreDataProperties.swift in Sources */,
+				FC33A6211D8CACBC00E4CD74 /* MaterialView.swift in Sources */,
 				FC33A6151D8C7D0B00E4CD74 /* Store+CoreDataProperties.swift in Sources */,
 				FC33A6161D8C7D0B00E4CD74 /* Category+CoreDataClass.swift in Sources */,
 				FC33A6181D8C7D0B00E4CD74 /* Image+CoreDataClass.swift in Sources */,
