@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC33A5F81D8C70D600E4CD74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A5F71D8C70D600E4CD74 /* AppDelegate.swift */; };
-		FC33A5FA1D8C70D600E4CD74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A5F91D8C70D600E4CD74 /* ViewController.swift */; };
+		FC33A5FA1D8C70D600E4CD74 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A5F91D8C70D600E4CD74 /* MainViewController.swift */; };
 		FC33A5FD1D8C70D700E4CD74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC33A5FB1D8C70D700E4CD74 /* Main.storyboard */; };
 		FC33A6001D8C70D700E4CD74 /* DreamTing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC33A5FE1D8C70D700E4CD74 /* DreamTing.xcdatamodeld */; };
 		FC33A6021D8C70D700E4CD74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC33A6011D8C70D700E4CD74 /* Assets.xcassets */; };
@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		FC33A5F41D8C70D600E4CD74 /* DreamTing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamTing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC33A5F71D8C70D600E4CD74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC33A5F91D8C70D600E4CD74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FC33A5F91D8C70D600E4CD74 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FC33A5FC1D8C70D700E4CD74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC33A5FF1D8C70D700E4CD74 /* DreamTing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamTing.xcdatamodel; sourceTree = "<group>"; };
 		FC33A6011D8C70D700E4CD74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,9 +72,10 @@
 		FC33A5F61D8C70D600E4CD74 /* DreamTing */ = {
 			isa = PBXGroup;
 			children = (
+				FC33A61F1D8C9DDB00E4CD74 /* Views */,
+				FC33A61E1D8C9DCD00E4CD74 /* Controllers */,
 				FC33A61C1D8C7D4000E4CD74 /* Models */,
 				FC33A5F71D8C70D600E4CD74 /* AppDelegate.swift */,
-				FC33A5F91D8C70D600E4CD74 /* ViewController.swift */,
 				FC33A5FB1D8C70D700E4CD74 /* Main.storyboard */,
 				FC33A6011D8C70D700E4CD74 /* Assets.xcassets */,
 				FC33A6031D8C70D700E4CD74 /* LaunchScreen.storyboard */,
@@ -105,6 +106,21 @@
 				FC33A6131D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FC33A61E1D8C9DCD00E4CD74 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC33A5F91D8C70D600E4CD74 /* MainViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FC33A61F1D8C9DDB00E4CD74 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,7 +204,7 @@
 				FC33A6181D8C7D0B00E4CD74 /* Image+CoreDataClass.swift in Sources */,
 				FC33A6001D8C70D700E4CD74 /* DreamTing.xcdatamodeld in Sources */,
 				FC33A6141D8C7D0B00E4CD74 /* Store+CoreDataClass.swift in Sources */,
-				FC33A5FA1D8C70D600E4CD74 /* ViewController.swift in Sources */,
+				FC33A5FA1D8C70D600E4CD74 /* MainViewController.swift in Sources */,
 				FC33A61B1D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift in Sources */,
 				FC33A5F81D8C70D600E4CD74 /* AppDelegate.swift in Sources */,
 			);
