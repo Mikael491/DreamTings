@@ -131,6 +131,24 @@
             </objects>
             <point key="canvasLocation" x="1054" y="139"/>
         </scene>
+        <!--Material Addor Edit-->
+        <scene sceneID="6Tl-ZA-CKe">
+            <objects>
+                <viewController id="cKI-nb-ZyD" customClass="MaterialAddorEdit" customModule="DreamTing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="21W-F3-cyJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="e8l-4E-z1a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2na-1r-vnA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OKl-A9-EZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="139"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="pXV-AW-Fds">
             <objects>
