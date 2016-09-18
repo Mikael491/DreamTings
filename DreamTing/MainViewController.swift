@@ -21,6 +21,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        attemptUpdates()
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,7 +98,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func attemptUpdates() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
-        let sortByDate = NSSortDescriptor(key: "Date", ascending: false)
+        let sortByDate = NSSortDescriptor(key: "created", ascending: false)
         request.sortDescriptors = [sortByDate]
     
         if #available(iOS 10.0, *) {
@@ -112,5 +115,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             print("Error: \(error)")
         }
     }
+
     
 }
