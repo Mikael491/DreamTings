@@ -43,5 +43,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    func attemptUpdates() {
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        let sortByDate = NSSortDescriptor(key: "Date", ascending: false)
+        request.sortDescriptors = [sortByDate]
+    
+        if #available(iOS 10.0, *) {
+            let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            self.controller = controller
+        } else {
+            // Fallback on earlier versions
+            print("Earlier version needs to be handled for 'managedObjectContext'")
+        }
+        
+        do {
+            try self.controller.performFetch()
+        } catch let error as NSError {
+            print("Error: \(error)")
+        }
+    }
     
 }
