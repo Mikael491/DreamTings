@@ -120,6 +120,9 @@
                     <navigationItem key="navigationItem" title="Items" id="9WU-Km-jZJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4oQ-d6-JPM">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="cKI-nb-ZyD" kind="show" identifier="AddMaterial" id="cbo-op-gNR"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
