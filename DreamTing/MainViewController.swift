@@ -36,9 +36,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let sections = controller.sections {
             return sections.count
         }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MaterialCell", for: indexPath) as? MaterialCellTableViewCell
+        {
+            
+            return cell
+        }
+        
+        
         return UITableViewCell()
     }
     
