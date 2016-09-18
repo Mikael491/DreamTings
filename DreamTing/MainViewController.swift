@@ -32,6 +32,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 0
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if let sections = controller.sections {
+            return sections.count
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
