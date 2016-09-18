@@ -12,6 +12,8 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var titleTxtFld: UITextField!
+    
+    var pickerViewData = [Store]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +32,12 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
-        
-        //error silencer
-        return 0
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        //error silencer
-        return 0
+        return pickerViewData.count
     }
     
     
@@ -47,6 +46,5 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         //error silencer
         return String()
     }
-    
     
 }
