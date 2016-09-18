@@ -40,15 +40,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MaterialCell", for: indexPath) as? MaterialCellTableViewCell
-        {
-            
-            return cell
-        }
-        
-        
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MaterialCell", for: indexPath) as! MaterialCellTableViewCell
+        configureCell(cell: cell, indexPath: indexPath)
+        return cell
+    }
+    
+    func configureCell(cell: MaterialCellTableViewCell, indexPath: IndexPath) {
+        let item = controller.object(at: indexPath as! IndexPath)
+        cell.configureCell(item: item)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
