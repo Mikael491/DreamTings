@@ -31,10 +31,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return UITableViewCell()
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
@@ -48,6 +44,33 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch (type) {
+        case .insert:
+            if let index = newIndexPath {
+                tableView.insertRows(at: [index], with: UITableViewRowAnimation.fade)
+            }
+            break
+        case .update:
+            if let indexPath = indexPath {
+                let cell = tableView.cellForRow(at: indexPath) as! MaterialCellTableViewCell
+                //TODO: Handle updating of cell
+            }
+            break
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            break
+        case .move:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+        }
         
     }
     
