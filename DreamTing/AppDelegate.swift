@@ -92,3 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+@available(iOS 10.0, *)
+let ad = UIApplication.shared.delegate as! AppDelegate
+
+@available(iOS 9.3, *)
+let context = ad.persistentContainer.viewContext
