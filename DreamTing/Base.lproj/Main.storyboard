@@ -229,6 +229,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pickerView" destination="wlY-hr-CD4" id="QjC-cd-i8D"/>
                         <outlet property="titleTxtFld" destination="1I6-Id-ZM2" id="u35-gl-y2Y"/>
                     </connections>
                 </viewController>
