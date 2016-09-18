@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -20,14 +21,31 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         pickerView.delegate = self
         pickerView.dataSource = self
         
+        let store1 = Store(context: context)
+        store1.name = "Apple Store"
+        
+        let store5 = Store(context: context)
+        store5.name = "Whole Foods"
+        
+        let store2 = Store(context: context)
+        store2.name = "Amazon"
+        
+        let store3 = Store(context: context)
+        store3.name = "Levis Store"
+        
+        let store4 = Store(context: context)
+        store4.name = "Costco"
+        
+        fetchStores()
     }
     
-    /*
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         //print("This is the height: \(titleTxtFld.frame.size.height)")
+        print(pickerViewData)
     }
-    */
+ 
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -44,7 +62,21 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         //error silencer
-        return String()
+        return pickerViewData[row].name
+    }
+    
+    //custom store objects fetcher
+    
+    func fetchStores() {
+        let fetchRequest: NSFetchRequest<Store> = Store.fetchRequest()
+        
+        do {
+            try self.pickerViewData = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            //handle error
+            print(error.localizedDescription)
+        }
+        
     }
     
 }
