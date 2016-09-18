@@ -24,6 +24,7 @@
 		FC33A6241D8CB22400E4CD74 /* MaterialCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6231D8CB22400E4CD74 /* MaterialCellTableViewCell.swift */; };
 		FC33A6261D8CB6E800E4CD74 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6251D8CB6E800E4CD74 /* MainViewController.swift */; };
 		FC9E87B11D8F3E98000DD752 /* MaterialAddorEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E87B01D8F3E98000DD752 /* MaterialAddorEdit.swift */; };
+		FC9E87B31D8F4142000DD752 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E87B21D8F4142000DD752 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		FC33A6231D8CB22400E4CD74 /* MaterialCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialCellTableViewCell.swift; sourceTree = "<group>"; };
 		FC33A6251D8CB6E800E4CD74 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FC9E87B01D8F3E98000DD752 /* MaterialAddorEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialAddorEdit.swift; sourceTree = "<group>"; };
+		FC9E87B21D8F4142000DD752 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				FC33A6201D8CACBA00E4CD74 /* MaterialView.swift */,
+				FC9E87B21D8F4142000DD752 /* CustomTextField.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				FC33A6141D8C7D0B00E4CD74 /* Store+CoreDataClass.swift in Sources */,
 				FC33A61B1D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift in Sources */,
 				FC33A5F81D8C70D600E4CD74 /* AppDelegate.swift in Sources */,
+				FC9E87B31D8F4142000DD752 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
