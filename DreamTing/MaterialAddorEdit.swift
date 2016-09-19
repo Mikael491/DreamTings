@@ -86,7 +86,25 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBAction func saveTapped(sender: UIButton) {
         
+        let item = Item(context: context)
         
+        if titleTxtFld.text != nil {
+            item.title = titleTxtFld.text
+        }
+        
+        if priceTxtFld.text != nil {
+            item.price = Double(priceTxtFld.text!)!
+        }
+        
+        if detailsTxtFld.text != nil {
+            item.details = detailsTxtFld.text
+        }
+        
+        item.toStore = pickerViewData[pickerView.selectedRow(inComponent: 0)]
+        
+        ad.saveContext()
+        
+        self.navigationController?.popViewController(animated: true)
         
     }
     
