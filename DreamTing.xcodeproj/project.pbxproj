@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FC33A5F81D8C70D600E4CD74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A5F71D8C70D600E4CD74 /* AppDelegate.swift */; };
-		FC33A5FA1D8C70D600E4CD74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A5F91D8C70D600E4CD74 /* ViewController.swift */; };
 		FC33A5FD1D8C70D700E4CD74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC33A5FB1D8C70D700E4CD74 /* Main.storyboard */; };
 		FC33A6001D8C70D700E4CD74 /* DreamTing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC33A5FE1D8C70D700E4CD74 /* DreamTing.xcdatamodeld */; };
 		FC33A6021D8C70D700E4CD74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC33A6011D8C70D700E4CD74 /* Assets.xcassets */; };
@@ -21,12 +20,16 @@
 		FC33A6191D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6111D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift */; };
 		FC33A61A1D8C7D0B00E4CD74 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6121D8C7D0B00E4CD74 /* Item+CoreDataClass.swift */; };
 		FC33A61B1D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6131D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift */; };
+		FC33A6211D8CACBC00E4CD74 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6201D8CACBA00E4CD74 /* MaterialView.swift */; };
+		FC33A6241D8CB22400E4CD74 /* MaterialCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6231D8CB22400E4CD74 /* MaterialCellTableViewCell.swift */; };
+		FC33A6261D8CB6E800E4CD74 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33A6251D8CB6E800E4CD74 /* MainViewController.swift */; };
+		FC9E87B11D8F3E98000DD752 /* MaterialAddorEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E87B01D8F3E98000DD752 /* MaterialAddorEdit.swift */; };
+		FC9E87B31D8F4142000DD752 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E87B21D8F4142000DD752 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FC33A5F41D8C70D600E4CD74 /* DreamTing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamTing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC33A5F71D8C70D600E4CD74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC33A5F91D8C70D600E4CD74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC33A5FC1D8C70D700E4CD74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC33A5FF1D8C70D700E4CD74 /* DreamTing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamTing.xcdatamodel; sourceTree = "<group>"; };
 		FC33A6011D8C70D700E4CD74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +43,11 @@
 		FC33A6111D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+CoreDataProperties.swift"; path = "../Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FC33A6121D8C7D0B00E4CD74 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "../Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FC33A6131D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "../Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FC33A6201D8CACBA00E4CD74 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		FC33A6231D8CB22400E4CD74 /* MaterialCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialCellTableViewCell.swift; sourceTree = "<group>"; };
+		FC33A6251D8CB6E800E4CD74 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FC9E87B01D8F3E98000DD752 /* MaterialAddorEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialAddorEdit.swift; sourceTree = "<group>"; };
+		FC9E87B21D8F4142000DD752 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +80,11 @@
 		FC33A5F61D8C70D600E4CD74 /* DreamTing */ = {
 			isa = PBXGroup;
 			children = (
+				FC33A6221D8CB1E900E4CD74 /* Cells */,
+				FC33A61F1D8C9DDB00E4CD74 /* Views */,
+				FC33A61E1D8C9DCD00E4CD74 /* Controllers */,
 				FC33A61C1D8C7D4000E4CD74 /* Models */,
 				FC33A5F71D8C70D600E4CD74 /* AppDelegate.swift */,
-				FC33A5F91D8C70D600E4CD74 /* ViewController.swift */,
 				FC33A5FB1D8C70D700E4CD74 /* Main.storyboard */,
 				FC33A6011D8C70D700E4CD74 /* Assets.xcassets */,
 				FC33A6031D8C70D700E4CD74 /* LaunchScreen.storyboard */,
@@ -105,6 +115,32 @@
 				FC33A6131D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FC33A61E1D8C9DCD00E4CD74 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC33A6251D8CB6E800E4CD74 /* MainViewController.swift */,
+				FC9E87B01D8F3E98000DD752 /* MaterialAddorEdit.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FC33A61F1D8C9DDB00E4CD74 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC33A6201D8CACBA00E4CD74 /* MaterialView.swift */,
+				FC9E87B21D8F4142000DD752 /* CustomTextField.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FC33A6221D8CB1E900E4CD74 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FC33A6231D8CB22400E4CD74 /* MaterialCellTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,16 +217,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC33A61A1D8C7D0B00E4CD74 /* Item+CoreDataClass.swift in Sources */,
+				FC33A6261D8CB6E800E4CD74 /* MainViewController.swift in Sources */,
 				FC33A6191D8C7D0B00E4CD74 /* Image+CoreDataProperties.swift in Sources */,
+				FC9E87B11D8F3E98000DD752 /* MaterialAddorEdit.swift in Sources */,
+				FC33A6241D8CB22400E4CD74 /* MaterialCellTableViewCell.swift in Sources */,
 				FC33A6171D8C7D0B00E4CD74 /* Category+CoreDataProperties.swift in Sources */,
+				FC33A6211D8CACBC00E4CD74 /* MaterialView.swift in Sources */,
 				FC33A6151D8C7D0B00E4CD74 /* Store+CoreDataProperties.swift in Sources */,
 				FC33A6161D8C7D0B00E4CD74 /* Category+CoreDataClass.swift in Sources */,
 				FC33A6181D8C7D0B00E4CD74 /* Image+CoreDataClass.swift in Sources */,
 				FC33A6001D8C70D700E4CD74 /* DreamTing.xcdatamodeld in Sources */,
 				FC33A6141D8C7D0B00E4CD74 /* Store+CoreDataClass.swift in Sources */,
-				FC33A5FA1D8C70D600E4CD74 /* ViewController.swift in Sources */,
 				FC33A61B1D8C7D0B00E4CD74 /* Item+CoreDataProperties.swift in Sources */,
 				FC33A5F81D8C70D600E4CD74 /* AppDelegate.swift in Sources */,
+				FC9E87B31D8F4142000DD752 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +353,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2WAWR77T4M;
 				INFOPLIST_FILE = DreamTing/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.mikael.DreamTing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -327,7 +367,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2WAWR77T4M;
 				INFOPLIST_FILE = DreamTing/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.mikael.DreamTing;
 				PRODUCT_NAME = "$(TARGET_NAME)";

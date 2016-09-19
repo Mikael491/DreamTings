@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+@available(iOS 10.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -91,3 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+@available(iOS 10.0, *)
+let ad = UIApplication.shared.delegate as! AppDelegate
+
+@available(iOS 10.0, *)
+let context = ad.persistentContainer.viewContext
