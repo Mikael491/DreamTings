@@ -21,6 +21,8 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         pickerView.delegate = self
         pickerView.dataSource = self
         
+        self.navigationController?.navigationBar.topItem?.title = ""
+        
         let store1 = Store(context: context)
         store1.name = "Apple Store"
         
@@ -43,7 +45,7 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         //print("This is the height: \(titleTxtFld.frame.size.height)")
-        print(pickerViewData)
+        //print(pickerViewData)
     }
  
     
