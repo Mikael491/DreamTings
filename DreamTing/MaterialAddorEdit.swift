@@ -43,6 +43,12 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         fetchStores()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        titleTxtFld.resignFirstResponder()
+        priceTxtFld.resignFirstResponder()
+        detailsTxtFld.resignFirstResponder()
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -107,6 +113,7 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         self.navigationController?.popViewController(animated: true)
         
     }
+    
     
     
     
