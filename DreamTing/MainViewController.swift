@@ -22,7 +22,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
-        //generateData()
         attemptUpdates()
         
     }
@@ -109,6 +108,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             // Fallback on earlier versions
             print("Earlier version needs to be handled for 'managedObjectContext'")
         }
+        
+        controller.delegate = self
         
         do {
             try self.controller.performFetch()
