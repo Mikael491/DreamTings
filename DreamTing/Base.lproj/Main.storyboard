@@ -205,6 +205,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveTappedWithSender:" destination="cKI-nb-ZyD" eventType="touchUpInside" id="Qby-W1-utf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -233,7 +236,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="detailsTxtFld" destination="Lpr-cd-VJy" id="Id3-IE-vDp"/>
                         <outlet property="pickerView" destination="wlY-hr-CD4" id="QjC-cd-i8D"/>
+                        <outlet property="priceTxtFld" destination="KpR-7d-B1l" id="azf-HW-iFz"/>
                         <outlet property="titleTxtFld" destination="1I6-Id-ZM2" id="u35-gl-y2Y"/>
                     </connections>
                 </viewController>

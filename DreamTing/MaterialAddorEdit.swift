@@ -13,6 +13,8 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var titleTxtFld: UITextField!
+    @IBOutlet weak var priceTxtFld: UITextField!
+    @IBOutlet weak var detailsTxtFld: UITextField!
     
     var pickerViewData = [Store]()
 
@@ -80,5 +82,45 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
         
     }
+    
+    
+    @IBAction func saveTapped(sender: UIButton) {
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
