@@ -15,6 +15,7 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var titleTxtFld: UITextField!
     @IBOutlet weak var priceTxtFld: UITextField!
     @IBOutlet weak var detailsTxtFld: UITextField!
+    @IBOutlet weak var materialImage: UIImageView!
     
     var pickerViewData = [Store]()
     var itemToEdit: Item?
@@ -147,6 +148,11 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
     }
     
+    
+    @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
+        
+        
+    }
     
     
     

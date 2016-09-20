@@ -147,11 +147,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-BJ-lE7">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-BJ-lE7">
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="bEK-qa-c0P"/>
                                     <constraint firstAttribute="width" constant="100" id="opw-Jk-Yeq"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="g6h-LC-y1b" appends="YES" id="tfs-uW-lz3"/>
+                                </connections>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1I6-Id-ZM2" customClass="CustomTextField" customModule="DreamTing" customModuleProvider="target">
                                 <constraints>
@@ -239,12 +243,18 @@
                     <navigationItem key="navigationItem" id="gCz-TG-AGR"/>
                     <connections>
                         <outlet property="detailsTxtFld" destination="Lpr-cd-VJy" id="Id3-IE-vDp"/>
+                        <outlet property="materialImage" destination="Kfe-BJ-lE7" id="QEb-jS-VVz"/>
                         <outlet property="pickerView" destination="wlY-hr-CD4" id="QjC-cd-i8D"/>
                         <outlet property="priceTxtFld" destination="KpR-7d-B1l" id="azf-HW-iFz"/>
                         <outlet property="titleTxtFld" destination="1I6-Id-ZM2" id="u35-gl-y2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKl-A9-EZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="g6h-LC-y1b">
+                    <connections>
+                        <action selector="imageTapped:" destination="cKI-nb-ZyD" id="kTF-sc-uaX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1812" y="138.98050974512745"/>
         </scene>
