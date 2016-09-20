@@ -54,7 +54,7 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     override func viewDidAppear(_ animated: Bool) {
         if itemToEdit != nil {
-            let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: ":deleteTapped")
+            let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: "deleteTapped")
             deleteButton.tintColor = UIColor.red
             self.navigationController?.navigationBar.topItem?.rightBarButtonItem = deleteButton
         }
@@ -139,23 +139,13 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
     }
     
-    func deleteTapped(item: Item) {
-        //TODO: handle item deletion
-        print("==========================")
-        print("selector properly selected")
-        print("==========================")
+    func deleteTapped() {
+        if let item = itemToEdit as Item? {
+            context.delete(item)
+            self.navigationController?.popViewController(animated: true)
+            ad.saveContext()
+        }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
