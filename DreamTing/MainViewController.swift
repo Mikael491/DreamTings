@@ -49,12 +49,22 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func configureCell(cell: MaterialCellTableViewCell, indexPath: IndexPath) {
-        let item = controller.object(at: indexPath as! IndexPath)
+        let item = controller.object(at: indexPath)
         cell.configureCell(item: item)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var item: Item?
+        if let materials = controller.fetchedObjects , materials.count > 0 {
+            item = materials[indexPath.row]
+        }
+        
+        performSegue(withIdentifier: "EditMaterial", sender: item)
+        
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -76,7 +86,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         case .update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! MaterialCellTableViewCell
-                //TODO: Handle updating of cell
+                configureCell(cell: cell, indexPath: indexPath)
             }
             break
         case .delete:
@@ -105,7 +115,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
             self.controller = controller
         } else {
-            // Fallback on earlier versions
+            // Fallback on earlier versions of NSFetchedResultsController
             print("Earlier version needs to be handled for 'managedObjectContext'")
         }
         
