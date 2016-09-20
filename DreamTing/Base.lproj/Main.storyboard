@@ -128,7 +128,7 @@
                     <connections>
                         <outlet property="segmentControl" destination="Oh5-MN-XsG" id="7ah-lZ-vPN"/>
                         <outlet property="tableView" destination="I8U-CM-bXV" id="miv-2E-I90"/>
-                        <segue destination="cKI-nb-ZyD" kind="showDetail" identifier="EditMaterial" id="mGp-a7-fHo"/>
+                        <segue destination="cKI-nb-ZyD" kind="show" identifier="EditMaterial" action="showDetailViewController:sender:" id="mGp-a7-fHo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
