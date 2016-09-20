@@ -72,7 +72,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         performSegue(withIdentifier: "EditMaterial", sender: item)
-        
+        //self.navigationController?.performSegue(withIdentifier: "EditMaterial", sender: item)
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

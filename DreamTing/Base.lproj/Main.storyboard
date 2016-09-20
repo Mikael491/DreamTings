@@ -29,7 +29,7 @@
                                     <segment title=""/>
                                 </segments>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I8U-CM-bXV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I8U-CM-bXV">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaterialCell" rowHeight="150" id="1Dz-hC-qza" customClass="MaterialCellTableViewCell" customModule="DreamTing" customModuleProvider="target">
@@ -128,7 +128,7 @@
                     <connections>
                         <outlet property="segmentControl" destination="Oh5-MN-XsG" id="7ah-lZ-vPN"/>
                         <outlet property="tableView" destination="I8U-CM-bXV" id="miv-2E-I90"/>
-                        <segue destination="cKI-nb-ZyD" kind="show" identifier="EditMaterial" action="showDetailViewController:sender:" id="mGp-a7-fHo"/>
+                        <segue destination="cKI-nb-ZyD" kind="showDetail" identifier="EditMaterial" action="showViewController:sender:" id="mGp-a7-fHo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -236,6 +236,7 @@
                             <constraint firstItem="Lpr-cd-VJy" firstAttribute="top" secondItem="KpR-7d-B1l" secondAttribute="bottom" constant="8" id="v0W-jZ-pnj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gCz-TG-AGR"/>
                     <connections>
                         <outlet property="detailsTxtFld" destination="Lpr-cd-VJy" id="Id3-IE-vDp"/>
                         <outlet property="pickerView" destination="wlY-hr-CD4" id="QjC-cd-i8D"/>
