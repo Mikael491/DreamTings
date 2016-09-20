@@ -22,6 +22,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        
         attemptUpdates()
         
     }
@@ -53,6 +54,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MaterialCell", for: indexPath) as! MaterialCellTableViewCell
         configureCell(cell: cell, indexPath: indexPath)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
     
