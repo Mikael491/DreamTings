@@ -100,21 +100,27 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBAction func saveTapped(sender: UIButton) {
         
-        let item = Item(context: context)
+        var item: Item?
         
-        if titleTxtFld.text != nil {
-            item.title = titleTxtFld.text
+        if itemToEdit != nil {
+            item = itemToEdit
+        } else {
+            item = Item(context: context)
         }
         
-        if priceTxtFld.text != nil {
-            item.price = Double(priceTxtFld.text!)!
+        if titleTxtFld.text != nil {
+            item?.title = titleTxtFld.text
+        }
+        
+        if let price = priceTxtFld.text {
+            item?.price = Double(price)!
         }
         
         if detailsTxtFld.text != nil {
-            item.details = detailsTxtFld.text
+            item?.details = detailsTxtFld.text
         }
         
-        item.toStore = pickerViewData[pickerView.selectedRow(inComponent: 0)]
+        item?.toStore = pickerViewData[pickerView.selectedRow(inComponent: 0)]
         
         ad.saveContext()
         
@@ -125,7 +131,7 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     func loadItemToEdit(item: Item) {
         
         titleTxtFld.text = item.title
-        priceTxtFld.text = "$\(item.price)"
+        priceTxtFld.text = String(item.price)
         detailsTxtFld.text = item.details
         
     }
