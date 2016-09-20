@@ -19,12 +19,13 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     var pickerViewData = [Store]()
     var itemToEdit: Item?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        self.navigationController?.navigationBar.topItem?.title = ""
+        //self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = ""
         
         /*
         let store1 = Store(context: context)
@@ -51,17 +52,19 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if itemToEdit != nil {
+            let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: ":deleteTapped")
+            deleteButton.tintColor = UIColor.red
+            self.navigationController?.navigationBar.topItem?.rightBarButtonItem = deleteButton
+        }
+    }
+
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         titleTxtFld.resignFirstResponder()
         priceTxtFld.resignFirstResponder()
         detailsTxtFld.resignFirstResponder()
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        //print("This is the height: \(titleTxtFld.frame.size.height)")
-        //print(pickerViewData)
     }
  
     
@@ -136,6 +139,12 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
     }
     
+    func deleteTapped(item: Item) {
+        //TODO: handle item deletion
+        print("==========================")
+        print("selector properly selected")
+        print("==========================")
+    }
     
     
     
