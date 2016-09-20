@@ -26,6 +26,7 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
         self.navigationController?.navigationBar.topItem?.title = ""
         
+        /*
         let store1 = Store(context: context)
         store1.name = "Apple Store"
         
@@ -40,8 +41,14 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
         let store4 = Store(context: context)
         store4.name = "Costco"
+        */
         
         fetchStores()
+        
+        if let item = itemToEdit as Item? {
+            loadItemToEdit(item: item)
+        }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -115,6 +122,13 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
     }
     
+    func loadItemToEdit(item: Item) {
+        
+        titleTxtFld.text = item.title
+        priceTxtFld.text = "$\(item.price)"
+        detailsTxtFld.text = item.details
+        
+    }
     
     
     
