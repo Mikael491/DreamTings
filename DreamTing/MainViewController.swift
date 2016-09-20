@@ -26,6 +26,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? MaterialAddorEdit {
+            if let object = sender as? Item {
+                destination.itemToEdit = object
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = controller.sections
         {

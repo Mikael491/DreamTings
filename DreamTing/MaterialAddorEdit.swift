@@ -17,7 +17,8 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var detailsTxtFld: UITextField!
     
     var pickerViewData = [Store]()
-
+    var itemToEdit: Item?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
