@@ -17,14 +17,17 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var detailsTxtFld: UITextField!
     
     var pickerViewData = [Store]()
-
+    var itemToEdit: Item?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        self.navigationController?.navigationBar.topItem?.title = ""
+        //self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = ""
         
+        /*
         let store1 = Store(context: context)
         store1.name = "Apple Store"
         
@@ -39,21 +42,29 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
         let store4 = Store(context: context)
         store4.name = "Costco"
+        */
         
         fetchStores()
+        
+        if let item = itemToEdit as Item? {
+            loadItemToEdit(item: item)
+        }
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if itemToEdit != nil {
+            let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: "deleteTapped")
+            deleteButton.tintColor = UIColor.red
+            self.navigationController?.navigationBar.topItem?.rightBarButtonItem = deleteButton
+        }
+    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         titleTxtFld.resignFirstResponder()
         priceTxtFld.resignFirstResponder()
         detailsTxtFld.resignFirstResponder()
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        //print("This is the height: \(titleTxtFld.frame.size.height)")
-        //print(pickerViewData)
     }
  
     
@@ -92,21 +103,27 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBAction func saveTapped(sender: UIButton) {
         
-        let item = Item(context: context)
+        var item: Item?
         
-        if titleTxtFld.text != nil {
-            item.title = titleTxtFld.text
+        if itemToEdit != nil {
+            item = itemToEdit
+        } else {
+            item = Item(context: context)
         }
         
-        if priceTxtFld.text != nil {
-            item.price = Double(priceTxtFld.text!)!
+        if titleTxtFld.text != nil {
+            item?.title = titleTxtFld.text
+        }
+        
+        if let price = priceTxtFld.text {
+            item?.price = Double(price)!
         }
         
         if detailsTxtFld.text != nil {
-            item.details = detailsTxtFld.text
+            item?.details = detailsTxtFld.text
         }
         
-        item.toStore = pickerViewData[pickerView.selectedRow(inComponent: 0)]
+        item?.toStore = pickerViewData[pickerView.selectedRow(inComponent: 0)]
         
         ad.saveContext()
         
@@ -114,18 +131,21 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
     }
     
+    func loadItemToEdit(item: Item) {
+        
+        titleTxtFld.text = item.title
+        priceTxtFld.text = String(item.price)
+        detailsTxtFld.text = item.details
+        
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func deleteTapped() {
+        if let item = itemToEdit as Item? {
+            context.delete(item)
+            self.navigationController?.popViewController(animated: true)
+            ad.saveContext()
+        }
+    }
     
     
     

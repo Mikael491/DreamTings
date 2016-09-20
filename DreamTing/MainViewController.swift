@@ -22,8 +22,17 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        
         attemptUpdates()
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? MaterialAddorEdit {
+            if let object = sender as? Item {
+                destination.itemToEdit = object
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,16 +54,27 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MaterialCell", for: indexPath) as! MaterialCellTableViewCell
         configureCell(cell: cell, indexPath: indexPath)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
     
     func configureCell(cell: MaterialCellTableViewCell, indexPath: IndexPath) {
-        let item = controller.object(at: indexPath as! IndexPath)
+        let item = controller.object(at: indexPath)
         cell.configureCell(item: item)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var item: Item?
+        if let materials = controller.fetchedObjects , materials.count > 0 {
+            item = materials[indexPath.row]
+        }
+        
+        performSegue(withIdentifier: "EditMaterial", sender: item)
+        //self.navigationController?.performSegue(withIdentifier: "EditMaterial", sender: item)
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -76,7 +96,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         case .update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! MaterialCellTableViewCell
-                //TODO: Handle updating of cell
+                configureCell(cell: cell, indexPath: indexPath)
             }
             break
         case .delete:
@@ -105,7 +125,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
             self.controller = controller
         } else {
-            // Fallback on earlier versions
+            // Fallback on earlier versions of NSFetchedResultsController
             print("Earlier version needs to be handled for 'managedObjectContext'")
         }
         
@@ -118,17 +138,5 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
-    
-    func generateData() {
-        
-        let item = Item(context: context)
-        item.details = "Oh my god, I really want this item!"
-        item.price = 1800
-        item.title = "Air Jordan 1 Bred"
-        
-        ad.saveContext()
-        
-    }
     
 }
