@@ -139,16 +139,4 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    
-    func generateData() {
-        
-        let item = Item(context: context)
-        item.details = "Oh my god, I really want this item!"
-        item.price = 1800
-        item.title = "Air Jordan 1 Bred"
-        
-        ad.saveContext()
-        
-    }
-    
 }
