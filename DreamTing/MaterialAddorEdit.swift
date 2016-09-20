@@ -154,24 +154,48 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
     }
     
+}
+
+
+extension MaterialAddorEdit: UIViewController, UIImagePickerControllerDelegate {
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
