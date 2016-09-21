@@ -19,15 +19,21 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     var pickerViewData = [Store]()
     var itemToEdit: Item?
-    
+    var imagePicker:UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        //self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = ""
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(MaterialAddorEdit.handleImageTap(tapGesture:)))
+        materialImage.isUserInteractionEnabled = true
+        materialImage.addGestureRecognizer(gesture)
+        print(materialImage.gestureRecognizers)
+        //self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = ""
         /*
         let store1 = Store(context: context)
         store1.name = "Apple Store"
@@ -148,16 +154,16 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
     }
     
-    
-    @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
-        
-        
+    func handleImageTap(tapGesture: UITapGestureRecognizer) {
+        print("====================================================")
+        print("Hello, world!")
+        print("====================================================")
     }
     
 }
 
 
-extension MaterialAddorEdit: UIViewController, UIImagePickerControllerDelegate {
+extension MaterialAddorEdit: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
