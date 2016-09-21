@@ -111,6 +111,8 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBAction func saveTapped(sender: UIButton) {
         
         var item: Item?
+        let image = Image(context: context)
+        image.image = materialImage.image
         
         if itemToEdit != nil {
             item = itemToEdit
@@ -118,12 +120,14 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             item = Item(context: context)
         }
         
+        item?.toImage? = image
+
         if titleTxtFld.text != nil {
             item?.title = titleTxtFld.text
         }
         
         if let price = priceTxtFld.text {
-            item?.price = Double(price)!
+            item?.price = (price as NSString).doubleValue
         }
         
         if detailsTxtFld.text != nil {
@@ -143,7 +147,7 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         titleTxtFld.text = item.title
         priceTxtFld.text = String(item.price)
         detailsTxtFld.text = item.details
-        
+        materialImage.image = item.toImage?.image as? UIImage
     }
     
     func deleteTapped() {
@@ -168,7 +172,7 @@ extension MaterialAddorEdit: UIImagePickerControllerDelegate, UINavigationContro
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        materialImage.image = info["UIImagePickerControllerOriginalImage"] as! UIImage?
+        materialImage.image = info[UIImagePickerControllerOriginalImage] as! UIImage!
         self.dismiss(animated: true, completion: nil)
     }
     
