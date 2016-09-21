@@ -61,7 +61,7 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     override func viewDidAppear(_ animated: Bool) {
         if itemToEdit != nil {
-            let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: "deleteTapped")
+            let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(MaterialAddorEdit.deleteTapped))
             deleteButton.tintColor = UIColor.red
             self.navigationController?.navigationBar.topItem?.rightBarButtonItem = deleteButton
         }
