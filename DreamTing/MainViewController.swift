@@ -116,6 +116,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    
+    //TODO: configure cells auto layout to display square image
+    
     func attemptUpdates() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         let sortByDate = NSSortDescriptor(key: "created", ascending: false)

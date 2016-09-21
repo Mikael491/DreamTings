@@ -120,7 +120,12 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             item = Item(context: context)
         }
         
-        item?.toImage? = image
+        item?.toImage = image
+        image.toItem = item
+        
+        print("=========================")
+        print(item?.toImage)
+        print("=========================")
 
         if titleTxtFld.text != nil {
             item?.title = titleTxtFld.text
