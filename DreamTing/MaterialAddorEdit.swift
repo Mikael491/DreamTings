@@ -155,9 +155,7 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     func handleImageTap(tapGesture: UITapGestureRecognizer) {
-        print("====================================================")
-        print("Hello, world!")
-        print("====================================================")
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
 }
@@ -166,11 +164,12 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
 extension MaterialAddorEdit: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
+        materialImage.image = info["UIImagePickerControllerOriginalImage"] as! UIImage?
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
