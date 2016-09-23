@@ -15,16 +15,26 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var titleTxtFld: UITextField!
     @IBOutlet weak var priceTxtFld: UITextField!
     @IBOutlet weak var detailsTxtFld: UITextField!
+    @IBOutlet weak var materialImage: UIImageView!
     
     var pickerViewData = [Store]()
-
+    var itemToEdit: Item?
+    var imagePicker:UIImagePickerController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        self.navigationController?.navigationBar.topItem?.title = ""
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(MaterialAddorEdit.handleImageTap(tapGesture:)))
+        materialImage.isUserInteractionEnabled = true
+        materialImage.addGestureRecognizer(gesture)
+        print(materialImage.gestureRecognizers)
+        //self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = ""
+        /*
         let store1 = Store(context: context)
         store1.name = "Apple Store"
         
@@ -39,21 +49,29 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
         let store4 = Store(context: context)
         store4.name = "Costco"
+        */
         
         fetchStores()
+        
+        if let item = itemToEdit as Item? {
+            loadItemToEdit(item: item)
+        }
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if itemToEdit != nil {
+            let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(MaterialAddorEdit.deleteTapped))
+            deleteButton.tintColor = UIColor.red
+            self.navigationController?.navigationBar.topItem?.rightBarButtonItem = deleteButton
+        }
+    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         titleTxtFld.resignFirstResponder()
         priceTxtFld.resignFirstResponder()
         detailsTxtFld.resignFirstResponder()
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        //print("This is the height: \(titleTxtFld.frame.size.height)")
-        //print(pickerViewData)
     }
  
     
@@ -92,21 +110,36 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBAction func saveTapped(sender: UIButton) {
         
-        let item = Item(context: context)
+        var item: Item?
+        let image = Image(context: context)
+        image.image = materialImage.image
         
-        if titleTxtFld.text != nil {
-            item.title = titleTxtFld.text
+        if itemToEdit != nil {
+            item = itemToEdit
+        } else {
+            item = Item(context: context)
         }
         
-        if priceTxtFld.text != nil {
-            item.price = Double(priceTxtFld.text!)!
+        item?.toImage = image
+        image.toItem = item
+        
+        print("=========================")
+        print(item?.toImage)
+        print("=========================")
+
+        if titleTxtFld.text != nil {
+            item?.title = titleTxtFld.text
+        }
+        
+        if let price = priceTxtFld.text {
+            item?.price = (price as NSString).doubleValue
         }
         
         if detailsTxtFld.text != nil {
-            item.details = detailsTxtFld.text
+            item?.details = detailsTxtFld.text
         }
         
-        item.toStore = pickerViewData[pickerView.selectedRow(inComponent: 0)]
+        item?.toStore = pickerViewData[pickerView.selectedRow(inComponent: 0)]
         
         ad.saveContext()
         
@@ -114,38 +147,69 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
     }
     
+    func loadItemToEdit(item: Item) {
+        
+        titleTxtFld.text = item.title
+        priceTxtFld.text = String(item.price)
+        detailsTxtFld.text = item.details
+        materialImage.image = item.toImage?.image as? UIImage
+    }
     
+    func deleteTapped() {
+        if let item = itemToEdit as Item? {
+            context.delete(item)
+            self.navigationController?.popViewController(animated: true)
+            ad.saveContext()
+        }
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func handleImageTap(tapGesture: UITapGestureRecognizer) {
+        self.present(imagePicker, animated: true, completion: nil)
+    }
     
 }
+
+
+extension MaterialAddorEdit: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        materialImage.image = info[UIImagePickerControllerOriginalImage] as! UIImage!
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
