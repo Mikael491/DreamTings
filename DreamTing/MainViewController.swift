@@ -123,7 +123,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         
         if segmentControl.selectedSegmentIndex == 0 {
-            let sortByTitle = NSSortDescriptor(key: "title", ascending: false)
+            let sortByTitle = NSSortDescriptor(key: "title", ascending: true)
             request.sortDescriptors = [sortByTitle]
         } else if segmentControl.selectedSegmentIndex == 1 {
             let sortByDate = NSSortDescriptor(key: "created", ascending: false)
@@ -151,7 +151,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func segmentTapped(sender: AnyObject) {
-        
+        attemptUpdates()
+        tableView.reloadData()
     }
     
     
