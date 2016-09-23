@@ -24,9 +24,9 @@
                                     <constraint firstAttribute="height" constant="30" id="bBK-Gu-fC2"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title=""/>
+                                    <segment title="Title"/>
+                                    <segment title="Recent"/>
+                                    <segment title="Price"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentTappedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="BcL-gI-GTb"/>
