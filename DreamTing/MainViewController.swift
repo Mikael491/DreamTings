@@ -141,5 +141,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    @IBAction func segmentTapped(sender: AnyObject) {
+
+    }
+    
+    
     
 }
