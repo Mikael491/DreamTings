@@ -147,7 +147,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-BJ-lE7">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-BJ-lE7">
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="bEK-qa-c0P"/>
                                     <constraint firstAttribute="width" constant="100" id="opw-Jk-Yeq"/>
@@ -239,6 +240,7 @@
                     <navigationItem key="navigationItem" id="gCz-TG-AGR"/>
                     <connections>
                         <outlet property="detailsTxtFld" destination="Lpr-cd-VJy" id="Id3-IE-vDp"/>
+                        <outlet property="materialImage" destination="Kfe-BJ-lE7" id="QEb-jS-VVz"/>
                         <outlet property="pickerView" destination="wlY-hr-CD4" id="QjC-cd-i8D"/>
                         <outlet property="priceTxtFld" destination="KpR-7d-B1l" id="azf-HW-iFz"/>
                         <outlet property="titleTxtFld" destination="1I6-Id-ZM2" id="u35-gl-y2Y"/>

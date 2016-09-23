@@ -15,18 +15,25 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var titleTxtFld: UITextField!
     @IBOutlet weak var priceTxtFld: UITextField!
     @IBOutlet weak var detailsTxtFld: UITextField!
+    @IBOutlet weak var materialImage: UIImageView!
     
     var pickerViewData = [Store]()
     var itemToEdit: Item?
-    
+    var imagePicker:UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        //self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = ""
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(MaterialAddorEdit.handleImageTap(tapGesture:)))
+        materialImage.isUserInteractionEnabled = true
+        materialImage.addGestureRecognizer(gesture)
+        print(materialImage.gestureRecognizers)
+        //self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = ""
         /*
         let store1 = Store(context: context)
         store1.name = "Apple Store"
@@ -54,7 +61,7 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     override func viewDidAppear(_ animated: Bool) {
         if itemToEdit != nil {
-            let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: "deleteTapped")
+            let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(MaterialAddorEdit.deleteTapped))
             deleteButton.tintColor = UIColor.red
             self.navigationController?.navigationBar.topItem?.rightBarButtonItem = deleteButton
         }
@@ -104,6 +111,8 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBAction func saveTapped(sender: UIButton) {
         
         var item: Item?
+        let image = Image(context: context)
+        image.image = materialImage.image
         
         if itemToEdit != nil {
             item = itemToEdit
@@ -111,12 +120,19 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             item = Item(context: context)
         }
         
+        item?.toImage = image
+        image.toItem = item
+        
+        print("=========================")
+        print(item?.toImage)
+        print("=========================")
+
         if titleTxtFld.text != nil {
             item?.title = titleTxtFld.text
         }
         
         if let price = priceTxtFld.text {
-            item?.price = Double(price)!
+            item?.price = (price as NSString).doubleValue
         }
         
         if detailsTxtFld.text != nil {
@@ -136,7 +152,7 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         titleTxtFld.text = item.title
         priceTxtFld.text = String(item.price)
         detailsTxtFld.text = item.details
-        
+        materialImage.image = item.toImage?.image as? UIImage
     }
     
     func deleteTapped() {
@@ -147,25 +163,53 @@ class MaterialAddorEdit: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func handleImageTap(tapGesture: UITapGestureRecognizer) {
+        self.present(imagePicker, animated: true, completion: nil)
+    }
     
 }
+
+
+extension MaterialAddorEdit: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        materialImage.image = info[UIImagePickerControllerOriginalImage] as! UIImage!
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
