@@ -121,8 +121,17 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func attemptUpdates() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
-        let sortByDate = NSSortDescriptor(key: "created", ascending: false)
-        request.sortDescriptors = [sortByDate]
+        
+        if segmentControl.selectedSegmentIndex == 0 {
+            let sortByTitle = NSSortDescriptor(key: "title", ascending: false)
+            request.sortDescriptors = [sortByTitle]
+        } else if segmentControl.selectedSegmentIndex == 1 {
+            let sortByDate = NSSortDescriptor(key: "created", ascending: false)
+            request.sortDescriptors = [sortByDate]
+        } else if segmentControl.selectedSegmentIndex == 2 {
+            let sortByPrice = NSSortDescriptor(key: "price", ascending: true)
+            request.sortDescriptors = [sortByPrice]
+        }
     
         if #available(iOS 10.0, *) {
             let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -142,7 +151,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func segmentTapped(sender: AnyObject) {
-
+        
     }
     
     
