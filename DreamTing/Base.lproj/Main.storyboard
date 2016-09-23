@@ -28,6 +28,9 @@
                                     <segment title="Second"/>
                                     <segment title=""/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentTappedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="BcL-gI-GTb"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I8U-CM-bXV">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
